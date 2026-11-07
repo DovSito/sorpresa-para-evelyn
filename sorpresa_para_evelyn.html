@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#21172f">
+<title>Una pequeña sorpresa para Evelyn</title>
+<style>
+  :root { --ink:#342541; --muted:#766482; --lav:#eadcf5; --lilac:#c7a8df; --deep:#21172f; --paper:#fffaff; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; color:var(--ink);
+    font-family: Georgia, "Palatino Linotype", serif;
+    background:
+      radial-gradient(circle at 15% 15%, #ffffffa8 0 1px, transparent 2px),
+      radial-gradient(circle at 80% 25%, #ffffffa0 0 1px, transparent 2px),
+      radial-gradient(circle at 30% 75%, #ffffffa0 0 1px, transparent 2px),
+      linear-gradient(145deg,#241832,#44305b 55%,#241832);
+    background-size:130px 130px,170px 170px,210px 210px,auto;
+    display:grid; place-items:center; padding:24px 14px; overflow-x:hidden;
+  }
+  .glow { position:fixed; width:300px;height:300px;border-radius:50%;filter:blur(80px);opacity:.24;pointer-events:none;background:#c79ee8; }
+  .glow.one {top:-100px;left:-90px}.glow.two {bottom:-120px;right:-80px;background:#a68be5}
+  .shell { width:min(100%,680px); position:relative; }
+  .card { background:var(--paper); border:1px solid #ffffff8c; border-radius:26px; overflow:hidden; box-shadow:0 24px 80px #09051070; }
+  .top { text-align:center; padding:42px 28px 32px; color:#fff; background:linear-gradient(145deg,#49345f,#261a37); position:relative; }
+  .eyebrow { font:600 11px/1.4 system-ui,sans-serif; letter-spacing:.22em; text-transform:uppercase; color:#d9c5eb; }
+  h1 { font-size:clamp(30px,7vw,48px); line-height:1.08; font-weight:normal; margin:16px 0 12px; }
+  .subtitle { color:#e6d9ef; font-size:16px; line-height:1.6; max-width:430px; margin:0 auto; }
+  .flower { font-size:28px; margin-top:18px; filter:drop-shadow(0 0 12px #e8cfff66); }
+  .content { padding:30px clamp(18px,5vw,42px) 34px; }
+  .intro { text-align:center; color:var(--muted); line-height:1.7; font-size:16px; margin:0 auto 24px; max-width:470px; }
+  button { font:600 14px system-ui,sans-serif; cursor:pointer; border:0; border-radius:999px; padding:13px 22px; transition:transform .18s, box-shadow .18s, background .18s; }
+  button:hover { transform:translateY(-2px); }
+  button:focus-visible { outline:3px solid #9c72bd; outline-offset:3px; }
+  .primary { color:white; background:linear-gradient(135deg,#78549a,#a27bc0); box-shadow:0 8px 20px #76519445; }
+  .secondary { color:#684c7c; background:#f0e7f7; }
+  .center { text-align:center; }
+  .hidden { display:none !important; }
+  .letters { display:grid; grid-template-columns:repeat(6,1fr); gap:9px; margin:10px 0 24px; }
+  .letter { padding:13px 0; border-radius:14px; color:#6e4e87; background:#f0e7f7; font:600 23px Georgia,serif; border:1px solid #e5d5ef; }
+  .letter.active { color:white; background:linear-gradient(145deg,#8c69a9,#674580); box-shadow:0 6px 16px #76519445; }
+  .verse { min-height:180px; border-radius:20px; background:linear-gradient(145deg,#fbf7ff,#f2eafa); border:1px solid #eadcf3; padding:25px 22px; text-align:center; display:flex; flex-direction:column; justify-content:center; animation:fade .45s ease; }
+  .big-letter { color:#9872b3; font-size:42px; line-height:1; margin-bottom:13px; }
+  .verse p { font-size:clamp(17px,3.5vw,20px); line-height:1.65; margin:0; }
+  .counter { font:12px system-ui,sans-serif; letter-spacing:.12em; color:#927da0; text-transform:uppercase; margin:17px 0 14px; }
+  .controls { display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
+  .final-note { text-align:center; line-height:1.75; font-size:18px; color:#5c456d; padding:12px 6px 4px; }
+  .signature { color:#8b69a5; font-style:italic; margin-top:18px; }
+  .footer { text-align:center; color:#a895b6; font:11px system-ui,sans-serif; padding:15px 8px 0; }
+  .sparkle { position:absolute; color:#ead8fa; opacity:.8; animation:float 5s ease-in-out infinite; pointer-events:none; }
+  .s1 {top:18px;left:8%;font-size:18px}.s2 {top:55px;right:10%;font-size:13px;animation-delay:1s}
+  @keyframes fade { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+  @media(max-width:430px){.top{padding:34px 20px 27px}.content{padding:24px 17px 28px}.letters{gap:5px}.letter{font-size:20px;padding:11px 0}.verse{min-height:205px}}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="glow one"></div><div class="glow two"></div>
+<main class="shell">
+  <section class="card">
+    <header class="top">
+      <span class="sparkle s1">✧</span><span class="sparkle s2">✦</span>
+      <div class="eyebrow">Una pequeña sorpresa</div>
+      <h1>Para Evelyn</h1>
+      <p class="subtitle">Hay palabras que quería compartir contigo, así que les preparé un pequeño espacio.</p>
+      <div class="flower">✿ ✧ 💜 ✧ ✿</div>
+    </header>
+    <div class="content">
+      <section id="welcome" class="center">
+        <p class="intro">Evelyn, Eevee o Manguito: esto es para ti. No necesitas responder nada especial; simplemente quería regalarte unas palabras con cariño.</p>
+        <button class="primary" id="start">Abrir mi sorpresa ✨</button>
+      </section>
+
+      <section id="experience" class="hidden" aria-live="polite">
+        <p class="intro">Cada letra guarda algo que quería decirte.</p>
+        <div class="letters" id="letters" aria-label="Letras de Evelyn">
+          <button class="letter active" data-index="0" aria-label="Letra E">E</button>
+          <button class="letter" data-index="1" aria-label="Letra V">V</button>
+          <button class="letter" data-index="2" aria-label="Letra E">E</button>
+          <button class="letter" data-index="3" aria-label="Letra L">L</button>
+          <button class="letter" data-index="4" aria-label="Letra Y">Y</button>
+          <button class="letter" data-index="5" aria-label="Letra N">N</button>
+        </div>
+        <article class="verse" id="verse">
+          <div class="big-letter" id="bigLetter">E</div>
+          <p id="verseText">Evelyn, Eevee o Manguito, una personita a quien estimo bastante, aunque llevemos relativamente poco tiempo conociéndonos y no hayamos compartido tantas experiencias, especialmente en persona.</p>
+        </article>
+        <div class="counter" id="counter">1 de 6 · E V E L Y N</div>
+        <div class="controls">
+          <button class="secondary" id="prev" disabled>← Anterior</button>
+          <button class="primary" id="next">Siguiente →</button>
+        </div>
+      </section>
+
+      <section id="ending" class="hidden">
+        <div class="verse">
+          <div class="big-letter">💜</div>
+          <p class="final-note">No tienes que tener días buenos para seguir siendo una persona maravillosa. También mereces paciencia, cariño y momentos de tranquilidad. Si algún día quieres conversar, desahogarte, jugar o simplemente distraerte un rato, puedes contar conmigo.</p>
+          <p class="signature">Con cariño,<br>Diego</p>
+        </div>
+        <div class="center" style="margin-top:22px">
+          <button class="secondary" id="restart">Volver a leer</button>
+        </div>
+      </section>
+    </div>
+  </section>
+  <div class="footer">Hecho con cariño · Una pequeña dedicatoria para Evelyn</div>
+</main>
+<script>
+const lines = [
+  ["E","Evelyn, Eevee o Manguito, una personita a quien estimo bastante, aunque llevemos relativamente poco tiempo conociéndonos y no hayamos compartido tantas experiencias, especialmente en persona."],
+  ["V","Verdaderamente, tienes una personalidad y una esencia únicas. Eres de esas personas que sorprenden con sus ocurrencias, como cuando haces esos clips con tus jugadas de Marvel."],
+  ["E","Esa forma tan particular que tienes de ser es algo que muchos apreciamos de ti. Tienes una chispa muy especial que te hace destacar."],
+  ["L","La verdad, ¡ya me gustaría ser tan sociable como tú! Tienes una facilidad para conectar con las personas que admiro bastante."],
+  ["Y","Y aunque sé que estás atravesando por un momento dificilísimo, quiero recordarte que no tienes que ser tan dura contigo misma. Todos cometemos errores, pero ninguno de ellos determina cuánto valemos como personas."],
+  ["N","No voy a juzgarte por lo que pasó. Si algún día necesitas conversar, desahogarte, jugar o simplemente distraerte un rato, puedes contar conmigo. Espero que nunca olvides esa magia que te hace ser tú."]
+];
+let current = 0;
+const welcome = document.getElementById('welcome');
+const experience = document.getElementById('experience');
+const ending = document.getElementById('ending');
+const letterButtons = [...document.querySelectorAll('.letter')];
+function showLine(index) {
+  current = index;
+  document.getElementById('bigLetter').textContent = lines[index][0];
+  document.getElementById('verseText').textContent = lines[index][1];
+  document.getElementById('counter').textContent = `${index+1} de 6 · E V E L Y N`;
+  letterButtons.forEach((b,i)=>{ b.classList.toggle('active',i===index); b.setAttribute('aria-pressed',i===index?'true':'false'); });
+  document.getElementById('prev').disabled = index===0;
+  document.getElementById('next').textContent = index===5 ? 'Terminar ✨' : 'Siguiente →';
+  const verse = document.getElementById('verse');
+  verse.style.animation='none'; void verse.offsetWidth; verse.style.animation='';
+}
+document.getElementById('start').addEventListener('click',()=>{welcome.classList.add('hidden');experience.classList.remove('hidden');showLine(0);});
+document.getElementById('prev').addEventListener('click',()=>{if(current>0)showLine(current-1);});
+document.getElementById('next').addEventListener('click',()=>{if(current<5)showLine(current+1);else{experience.classList.add('hidden');ending.classList.remove('hidden');}});
+letterButtons.forEach(b=>b.addEventListener('click',()=>showLine(Number(b.dataset.index))));
+document.getElementById('restart').addEventListener('click',()=>{ending.classList.add('hidden');experience.classList.remove('hidden');showLine(0);});
+</script>
+</body>
+</html>
